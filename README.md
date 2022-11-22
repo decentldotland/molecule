@@ -29,7 +29,7 @@ molecules/
 
 ### API path structure
 
-`atom-name.molecule.sh/atom-name/{argument1}/{argument2}`
+`molecule-name.molecule.sh/atom-name/{argument1}/{argument2}`
 
 ## Examples
 The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to achieve certain functionalities:
