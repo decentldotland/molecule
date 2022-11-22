@@ -3,12 +3,12 @@
     <img src="./img/molecule.svg" height="180">
   </a>
   <h3 align="center"><code>@decentdotland/molecule</code></h3>
-  <p align="center">reusable code blocks for EXM contracts</p>
+  <p align="center">composable building blocks for EXM smart contracts</p>
 </p>
 
 
 ## Synopsis
-Molecule is a developer tooling API for EXM developers that's built on top of the `deterministicFetch` EXM feature. `molecule.sh` is composed of multiple reusable EXM components/codes to facilitate writing EXM functions.
+Molecule is a developer tooling API for EXM developers that's built on top of the `deterministicFetch` EXM feature. `molecule.sh` is composed of multiple reusable EXM components to facilitate writing EXM functions.
 
 ## molecule.sh structure
 
