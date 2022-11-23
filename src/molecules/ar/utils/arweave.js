@@ -1,4 +1,5 @@
 import Arweave from "arweave";
+import assert from "node:assert";
 
 export const arweave = Arweave.init({
   host: "arweave.net",
@@ -13,5 +14,13 @@ export function _checkArAddrTxSyntax(str) {
     return /[a-z0-9_-]{43}/i.test(str);
   } catch (error) {
     return error;
+  }
+}
+
+export function _checkPubKeySyntax(pubkey) {
+  try {
+    assert.equal(typeof pubkey === "string" && pubkey.length === 683, true);
+  } catch (error) {
+    throw error;
   }
 }
