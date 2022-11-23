@@ -4,6 +4,7 @@ import assert from "node:assert";
 
 import { checkSubdomain } from "./utils/resolving.js";
 import { getArTxObject } from "./molecules/ar/atoms/tx-gql.js";
+import { ownerToAddress } from "./molecules/ar/atoms/ota.js";
 import { isSigner } from "./molecules/evm/atoms/verifySigner.js";
 
 const app = express();
@@ -20,12 +21,26 @@ app.get("/tx-gql/:txid", async (req, res) => {
     res.setHeader("Content-Type", "application/json");
 
     assert.equal(checkSubdomain(req, "ar"), true);
-    const response = await getArTxObject(req.params.txid);
+    const response = await getArTxObject(req.params?.txid);
     res.send(response);
     return;
   } catch (error) {
     console.log(error);
     res.send({});
+    return;
+  }
+});
+
+app.get("/ota/:pubkey", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "ar"), true);
+    const address = await ownerToAddress(req.params?.pubkey);
+    res.send({ address });
+    return;
+  } catch (error) {
+    res.send({ address: null });
     return;
   }
 });
