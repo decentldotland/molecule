@@ -24,7 +24,7 @@ molecules/
 ### Endpoints
 | molecule  | endpoint | atoms
 | :-------------: |:-------------:| :-------------:|
-| Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` |
+| Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` |
 | EVM (`evm`)      | `evm.molecule.sh`     | `signer`
 
 ### API path structure
