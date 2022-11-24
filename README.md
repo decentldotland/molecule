@@ -16,10 +16,11 @@ Molecule is a developer tooling API for EXM developers that's built on top of th
 
 ```
 molecules/
-├── ar/
-│   └── tx-gql // atom
-└── evm/
-    └── signer // atom
+├── ar/ 
+│   └── tx-gql ~> atom
+│   └── ota
+└── evm/ ~> molecule
+    └── signer
 ```
 ### Endpoints
 | molecule  | endpoint | atoms
@@ -37,6 +38,8 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 - EXM with EVM : allows EXM contracts to be fully compatible with `action.caller` as EVM EOA. [example](./examples/evm-signing/wtf.md)
 
 -  Fetch Arweave TX metadata: fetch L1 or bundled Arweave TX object. [example](./examples/l2-tx-content-type/wtf.md)
+
+- Convert an Arweave public key to Arweave address. [example](./examples/ownerToAddress/wtf.md)
 
 ## License
 This project is licensed under the [MIT License](./LICENSE)
