@@ -6,6 +6,7 @@ import { checkSubdomain } from "./utils/resolving.js";
 import { getArTxObject } from "./molecules/ar/atoms/tx-gql.js";
 import { ownerToAddress } from "./molecules/ar/atoms/ota.js";
 import { isSigner } from "./molecules/evm/atoms/verifySigner.js";
+import { random } from "./molecules/rand/atoms/int.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -56,6 +57,21 @@ app.get("/signer/:address/:message/:signature", async (req, res) => {
     return;
   } catch (error) {
     res.send({ result: false });
+    return;
+  }
+});
+
+app.get("/generate/:min/:max", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "rand"), true);
+    const { min, max } = req.params;
+    const response = await random(Number(min), Number(max));
+    res.send({ result: response });
+    return;
+  } catch (error) {
+    res.send({ result: null });
     return;
   }
 });
