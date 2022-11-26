@@ -41,5 +41,7 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 
 - Convert an Arweave public key to Arweave address. [example](./examples/ownerToAddress/wtf.md)
 
+- Lucky draw by randomization powered by random.org - [example](./examples/luckyDraw)
+
 ## License
 This project is licensed under the [MIT License](./LICENSE)
