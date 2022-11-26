@@ -26,7 +26,8 @@ molecules/
 | molecule  | endpoint | atoms
 | :-------------: |:-------------:| :-------------:|
 | Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` |
-| EVM (`evm`)      | `evm.molecule.sh`     | `signer`
+| EVM (`evm`)      | `evm.molecule.sh`     | `signer` |
+| Randomization (`rand`) | `rand.molecule.sh` | `generate` | 
 
 ### API path structure
 
