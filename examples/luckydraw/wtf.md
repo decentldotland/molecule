@@ -2,7 +2,7 @@
 This example contract demonstrates how you can use the `int` atom of `rand` molecule in order to generate a random integer powered by [random.org](https://random.org) and then doing a random lucky draw out a pre-defined `participants` array. 
 
 #### Contract
-- Live deployment: TODO
+- Live deployment: [L63oE4PVDq3NOfYGBHFvWH62YKizkhjIB263P57038k](https://api.exm.dev/read/L63oE4PVDq3NOfYGBHFvWH62YKizkhjIB263P57038k)
 - source code: [./contract.js](./contract.js)
 
 ## Prerequisites
