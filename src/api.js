@@ -5,7 +5,8 @@ import assert from "node:assert";
 import { checkSubdomain } from "./utils/resolving.js";
 import { getArTxObject } from "./molecules/ar/atoms/tx-gql.js";
 import { ownerToAddress } from "./molecules/ar/atoms/ota.js";
-import { isSigner } from "./molecules/evm/atoms/verifySigner.js";
+import { isEvmSigner } from "./molecules/evm/atoms/verifySigner.js";
+import { isSolSigner } from "./molecules/sol/atoms/verifySigner.js";
 import { random } from "./molecules/rand/atoms/int.js";
 
 const app = express();
@@ -52,7 +53,22 @@ app.get("/signer/:address/:message/:signature", async (req, res) => {
 
     assert.equal(checkSubdomain(req, "evm"), true);
     const { address, message, signature } = req.params;
-    const response = await isSigner(address, message, signature);
+    const response = await isEvmSigner(address, message, signature);
+    res.send({ result: response });
+    return;
+  } catch (error) {
+    res.send({ result: false });
+    return;
+  }
+});
+
+app.get("/auth/:pubkey/:message/:signature", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "sol"), true);
+    const { pubkey, message, signature } = req.params;
+    const response = await isSolSigner(message, pubkey, signature);
     res.send({ result: response });
     return;
   } catch (error) {
