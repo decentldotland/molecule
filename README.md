@@ -3,12 +3,12 @@
     <img src="./img/molecule.svg" height="180">
   </a>
   <h3 align="center"><code>@decentdotland/molecule</code></h3>
-  <p align="center">composable building blocks for EXM smart contracts</p>
+  <p align="center">reusable code blocks for EXM contracts</p>
 </p>
 
 
 ## Synopsis
-Molecule is a developer tooling API for EXM developers that's built on top of the `deterministicFetch` EXM feature. `molecule.sh` is composed of multiple reusable EXM components to facilitate writing EXM functions.
+Molecule is a developer tooling API for EXM developers that's built on top of the `deterministicFetch` EXM feature. `molecule.sh` is composed of multiple reusable EXM components/codes to facilitate writing EXM functions.
 
 ## molecule.sh structure
 
@@ -16,11 +16,12 @@ Molecule is a developer tooling API for EXM developers that's built on top of th
 
 ```
 molecules/
-├── ar/ 
-│   └── tx-gql ~> atom
-│   └── ota
-└── evm/ ~> molecule
-    └── signer
+├── ar/
+│   └── tx-gql // atom
+└── evm/
+├── └── signer // atom
+└── sol/
+    └── auth
 ```
 ### Endpoints
 | molecule  | endpoint | atoms
@@ -28,6 +29,7 @@ molecules/
 | Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` |
 | EVM (`evm`)      | `evm.molecule.sh`     | `signer` |
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 
+| Solana (`sol`) | `sol.molecule.sh` | `auth` |
 
 ### API path structure
 
@@ -44,5 +46,8 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 
 - Lucky draw by randomization powered by random.org - [example](./examples/luckyDraw)
 
+- Solana authentication: Simple name registry contract. [example](./examples/sol-signing/wtf.md)
+
 ## License
 This project is licensed under the [MIT License](./LICENSE)
+
