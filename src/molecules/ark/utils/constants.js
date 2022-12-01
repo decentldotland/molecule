@@ -1,0 +1,1 @@
+export const ARK_ORACLE_ADDRESS = `Z7JzRRt2iTQWV5LziNhTV6SP51tVKkCf_qrUqtlwzpg`;
