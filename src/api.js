@@ -8,6 +8,8 @@ import { ownerToAddress } from "./molecules/ar/atoms/ota.js";
 import { isEvmSigner } from "./molecules/evm/atoms/verifySigner.js";
 import { isSolSigner } from "./molecules/sol/atoms/verifySigner.js";
 import { random } from "./molecules/rand/atoms/int.js";
+import { getArkState } from "./molecules/ark/atoms/state.js";
+import { resolveArkUser } from "./molecules/ark/atoms/resolve.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -91,6 +93,36 @@ app.get("/generate/:min/:max", async (req, res) => {
     return;
   }
 });
+
+app.get("/state", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "ark"), true);
+    const response = await getArkState();
+    res.send(response);
+    return;
+  } catch (error) {
+    res.send({});
+    return;
+  }
+});
+
+app.get("/resolve/:arweave_address", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "ark"), true);
+    const response = await resolveArkUser(req.params?.arweave_address);
+    res.send(response);
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send({});
+    return;
+  }
+});
+
 
 app.listen(port, async () => {
   console.log(`listening at PORT:${port}`);

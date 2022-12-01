@@ -1,1 +1,1 @@
-export const MOLECULES = ["ar", "evm", "sol", "rand"];
+export const MOLECULES = ["ar", "ark", "evm", "sol", "rand"];
