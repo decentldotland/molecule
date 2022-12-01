@@ -6,12 +6,16 @@ export async function handle(state, action) {
       state.participants.length,
       "cannot proceed with an empty participants array"
     );
+    ContractAssert(!state.isSealed,"draw closed - done");
+
     const max = state.participants.length - 1;
     const drawResult = await _moleculeRandInt(max);
     state.winners.push({
       winner: state.participants[drawResult],
       randInt: drawResult,
     });
+
+    state.isSealed = true;
 
     return { state };
   }

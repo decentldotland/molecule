@@ -1,5 +1,6 @@
 {
 	"rand_molecule_endpoint": "http://rand.molecule.sh",
+	"isSealed": false,
 	"participants": [
 		"user_1",
 		"user_2",
