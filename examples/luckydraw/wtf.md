@@ -18,5 +18,5 @@ npm i -g @execution-machine/sdk
 
 #### Example
 ```console
-exm function:write $CONTRACT_ID '{"function": "draw"}' --token EXM_TOKEN_ID
+exm function:write $CONTRACT_ID --input '{"function": "draw"}' --token EXM_TOKEN_ID
 ```
