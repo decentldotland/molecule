@@ -20,5 +20,5 @@ To register a `name` in the contract example, you have first to sign with you wa
 Copy the signed message (use base58 format) to use for the EXM interaction's input
 
 ```console
-exm function:write sxXyYeps7Lo7_4qZ0pyNScn99UehACYEH7vapNBFBwM '{"function": "register", "name": "buildooor", "signature": "$YOUR_SOLANA_SIGNATURE", "caller": "$SOL_ADDRESS_USED_FOR_SIGINING"}' --token EXM_TOKEN_ID
+exm function:write sxXyYeps7Lo7_4qZ0pyNScn99UehACYEH7vapNBFBwM --input '{"function": "register", "name": "buildooor", "signature": "$YOUR_SOLANA_SIGNATURE", "caller": "$SOL_ADDRESS_USED_FOR_SIGINING"}' --token EXM_TOKEN_ID
 ```
