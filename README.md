@@ -17,19 +17,24 @@ Molecule is a developer tooling API for EXM developers that's built on top of th
 ```
 molecules/
 ├── ar/
-│   └── tx-gql // atom
+│   └── tx-gql ~> atom
 └── evm/
-├── └── signer // atom
-└── sol/
-    └── auth
+├── └── signer
+└── sol/ ~> molecule
+├── └── auth
+└── ark/
+    ├── resolve
+    └── state
 ```
 ### Endpoints
 | molecule  | endpoint | atoms
 | :-------------: |:-------------:| :-------------:|
 | Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` |
 | EVM (`evm`)      | `evm.molecule.sh`     | `signer` |
-| Randomization (`rand`) | `rand.molecule.sh` | `generate` | 
 | Solana (`sol`) | `sol.molecule.sh` | `auth` |
+| Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` |
+| Randomization (`rand`) | `rand.molecule.sh` | `generate` | 
+
 
 ### API path structure
 
@@ -44,9 +49,11 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 
 - Convert an Arweave public key to Arweave address. [example](./examples/ownerToAddress/wtf.md)
 
-- Lucky draw by randomization powered by random.org - [example](./examples/luckyDraw)
+- Lucky draw by randomization powered by random.org - [example](./examples/luckyDraw/wtf.md)
 
 - Solana authentication: Simple name registry contract. [example](./examples/sol-signing/wtf.md)
+
+- Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
 ## License
 This project is licensed under the [MIT License](./LICENSE)
