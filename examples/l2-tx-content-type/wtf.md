@@ -18,5 +18,5 @@ To register a `name` in the contract example, you have first to sign with you wa
 Copy the signed message to use for the EXM interaction's input
 
 ```console
-exm function:write XUjW9BgKrhVa0MQg7Y73Frh3xwaZmRHPtSo_WlhhG6w '{"function": "register", "name": "buildooor", "signature": "$YOUR_SIGNATURE_ETHERSCAN", "caller": "$YOUR_ADDRESS_USED_FOR_SIGINING"}' --token EXM_TOKEN_ID
+exm function:write XUjW9BgKrhVa0MQg7Y73Frh3xwaZmRHPtSo_WlhhG6w --input '{"function": "register", "name": "buildooor", "signature": "$YOUR_SIGNATURE_ETHERSCAN", "caller": "$YOUR_ADDRESS_USED_FOR_SIGINING"}' --token EXM_TOKEN_ID
 ```
