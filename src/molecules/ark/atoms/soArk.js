@@ -22,7 +22,6 @@ export async function isDomainOwner(network, address, type, domain) {
     const evmVerifiedAddresses = profile?.addresses
       .filter((addr) => addr.is_verified && addr.ark_key === "EVM")
       .map((addr) => addr.address);
-    console.log(evmVerifiedAddresses);
     const nearVerifiedAddresses = profile?.addresses
       .filter((addr) => addr.is_verified && addr.ark_key === "EXOTIC")
       .map((addr) => addr.address);
