@@ -10,6 +10,7 @@ import { isSolSigner } from "./molecules/sol/atoms/verifySigner.js";
 import { random } from "./molecules/rand/atoms/int.js";
 import { getArkState } from "./molecules/ark/atoms/state.js";
 import { resolveArkUser } from "./molecules/ark/atoms/resolve.js";
+import { isDomainOwner } from "./molecules/ark/atoms/soArk.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -119,6 +120,22 @@ app.get("/resolve/:arweave_address", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.send({});
+    return;
+  }
+});
+
+app.get("/soark/domain/:network/:address/:type/:domain", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "ark"), true);
+    const { network, address, type, domain } = req.params;
+    const response = await isDomainOwner(network, address, type, domain);
+    res.send({ result: response });
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send({ result: false });
     return;
   }
 });

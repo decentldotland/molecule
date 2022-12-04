@@ -1,6 +1,6 @@
 {
   "name": "molecule",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "reusable EXM components and helper functions for a faster development",
   "main": "./src/api.js",

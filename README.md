@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://decent.land">
+  <a href="https://molecule.sh">
     <img src="./img/molecule.svg" height="180">
   </a>
   <h3 align="center"><code>@decentdotland/molecule</code></h3>
@@ -32,7 +32,7 @@ molecules/
 | Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` |
 | EVM (`evm`)      | `evm.molecule.sh`     | `signer` |
 | Solana (`sol`) | `sol.molecule.sh` | `auth` |
-| Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` |
+| Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` |
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 
 
 
