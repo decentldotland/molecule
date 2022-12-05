@@ -23,17 +23,22 @@ molecules/
 └── sol/ ~> molecule
 ├── └── auth
 └── ark/
-    ├── resolve
-    └── state
+├── ├── resolve
+├── └── state
+│   └── soark/domain
+└── ai/
+    └── chatgpt
 ```
 ### Endpoints
-| molecule  | endpoint | atoms
-| :-------------: |:-------------:| :-------------:|
-| Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` |
-| EVM (`evm`)      | `evm.molecule.sh`     | `signer` |
-| Solana (`sol`) | `sol.molecule.sh` | `auth` |
-| Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` |
-| Randomization (`rand`) | `rand.molecule.sh` | `generate` | 
+| molecule  | endpoint | atoms | stability |
+| :-------------: |:-------------:| :-------------:| :-------------:|
+| Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` | 🟩 |
+| EVM (`evm`)      | `evm.molecule.sh`     | `signer` | 🟩 |
+| Solana (`sol`) | `sol.molecule.sh` | `auth` | 🟩 |
+| Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 |
+| Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
+| AI (`ai`) | `ai.molecule.sh` | `chatgpt` | 🟩/🟨 |
+
 
 
 ### API path structure
@@ -54,6 +59,8 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 - Solana authentication: Simple name registry contract. [example](./examples/sol-signing/wtf.md)
 
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
+
+- Interacting with ChatGPT from EXM smart contracts. [example](./examples/chat-gpt/wtf.md)
 
 ## License
 This project is licensed under the [MIT License](./LICENSE)
