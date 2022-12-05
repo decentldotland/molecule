@@ -140,6 +140,21 @@ app.get("/soark/domain/:network/:address/:type/:domain", async (req, res) => {
   }
 });
 
+app.get("/chatgpt/:input", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "ai"), true);
+    const response = await chatGpt(req.params?.input);
+    res.send({result: response});
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send({result: null});
+    return;
+  }
+});
+
 
 app.listen(port, async () => {
   console.log(`listening at PORT:${port}`);
