@@ -173,22 +173,6 @@ app.get("/gpt3/:prompt/:model/:max_tokens/:temperature/:top_p", async (req, res)
   }
 });
 
-app.get("/gpt32", async (req, res) => {
-  try {
-    res.setHeader("Content-Type", "application/json");
-
-    // const { prompt, model, max_tokens, temperature, top_p } = req.params;
-    const prompt = base64url.encode("hello bot")
-    const response = await GPT3(prompt, "text-davinci-003", 25, 0.5);
-    res.send({result: response});
-    return;
-  } catch (error) {
-    res.send({result: error});
-    return;
-  }
-});
-
-
 app.listen(port, async () => {
   console.log(`listening at PORT:${port}`);
 });
