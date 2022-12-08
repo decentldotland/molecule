@@ -19,5 +19,5 @@ npm i -g @execution-machine/sdk
 
 #### Example
 ```console
-exm function:write $CONTRACT_ID '{"function": "generate-text", "prompt": "$BASE64URL_ENCODED_PROMPT", "model": "text-davinci-003", "max_tokens": 20, "temperature": 0.4}' --token EXM_TOKEN_ID
+exm function:write $CONTRACT_ID --input '{"function": "generate-text", "prompt": "$BASE64URL_ENCODED_PROMPT", "model": "text-davinci-003", "max_tokens": 20, "temperature": 0.4}' --token EXM_TOKEN_ID
 ```
