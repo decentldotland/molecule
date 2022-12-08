@@ -148,30 +148,39 @@ app.get("/chatgpt/:input", async (req, res) => {
 
     assert.equal(checkSubdomain(req, "ai"), true);
     const response = await chatGpt(req.params?.input);
-    res.send({result: response});
+    res.send({ result: response });
     return;
   } catch (error) {
     console.log(error);
-    res.send({result: null});
+    res.send({ result: null });
     return;
   }
 });
 
-app.get("/gpt3/:prompt/:model/:max_tokens/:temperature/:top_p?", async (req, res) => {
-  try {
-    res.setHeader("Content-Type", "application/json");
+app.get(
+  "/gpt3/:prompt/:model/:max_tokens/:temperature/:top_p?",
+  async (req, res) => {
+    try {
+      res.setHeader("Content-Type", "application/json");
 
-    assert.equal(checkSubdomain(req, "ai"), true);
-    const { prompt, model, max_tokens, temperature, top_p } = req.params;
-    const response = await GPT3(prompt, model, max_tokens, temperature, top_p);
-    res.send({result: response});
-    return;
-  } catch (error) {
-    console.log(error);
-    res.send({result: null});
-    return;
+      assert.equal(checkSubdomain(req, "ai"), true);
+      const { prompt, model, max_tokens, temperature, top_p } = req.params;
+      const response = await GPT3(
+        prompt,
+        model,
+        Number(max_tokens),
+        Number(temperature),
+        Number(top_p)
+      );
+      res.send({ result: response });
+      return;
+    } catch (error) {
+      console.log(error);
+      res.send({ result: null });
+      return;
+    }
   }
-});
+);
 
 app.listen(port, async () => {
   console.log(`listening at PORT:${port}`);
