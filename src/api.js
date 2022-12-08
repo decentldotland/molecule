@@ -11,6 +11,8 @@ import { random } from "./molecules/rand/atoms/int.js";
 import { getArkState } from "./molecules/ark/atoms/state.js";
 import { resolveArkUser } from "./molecules/ark/atoms/resolve.js";
 import { isDomainOwner } from "./molecules/ark/atoms/soArk.js";
+import { GPT3 } from "./molecules/ai/atoms/GPT3.js";
+import base64url from "base64url";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -151,6 +153,37 @@ app.get("/chatgpt/:input", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.send({result: null});
+    return;
+  }
+});
+
+app.get("/gpt3/:prompt/:model/:max_tokens/:temperature/:top_p", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "ai"), true);
+    const { prompt, model, max_tokens, temperature, top_p } = req.params;
+    const response = await GPT3(prompt, model, max_tokens, temperature, top_p);
+    res.send({result: response});
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send({result: null});
+    return;
+  }
+});
+
+app.get("/gpt32", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    // const { prompt, model, max_tokens, temperature, top_p } = req.params;
+    const prompt = base64url.encode("hello bot")
+    const response = await GPT3(prompt, "text-davinci-003", 25, 0.5);
+    res.send({result: response});
+    return;
+  } catch (error) {
+    res.send({result: error});
     return;
   }
 });
