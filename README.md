@@ -37,7 +37,7 @@ molecules/
 | Solana (`sol`) | `sol.molecule.sh` | `auth` | 🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 |
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
-| AI (`ai`) | `ai.molecule.sh` | `chatgpt` | 🟩/🟨 |
+| AI (`ai`) | `ai.molecule.sh` | `gpt3` `chatgpt` | 🟩/🟨 |
 
 
 
