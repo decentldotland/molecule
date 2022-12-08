@@ -157,7 +157,7 @@ app.get("/chatgpt/:input", async (req, res) => {
   }
 });
 
-app.get("/gpt3/:prompt/:model/:max_tokens/:temperature/:top_p", async (req, res) => {
+app.get("/gpt3/:prompt/:model/:max_tokens/:temperature/:top_p?", async (req, res) => {
   try {
     res.setHeader("Content-Type", "application/json");
 
