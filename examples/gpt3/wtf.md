@@ -1,5 +1,7 @@
 ## About
-This example contract demonstrates how to integrates the `gpt3` atom from `ai` molecule in order to interact with openAI's [GPT-3](https://beta.openai.com/docs/guides/completion) from an EXM smart contract. 
+This example contract demonstrates how to integrates the `gpt3` atom from `ai` molecule in order to interact with openAI's [GPT-3](https://beta.openai.com/docs/guides/completion) from an EXM smart contract.
+
+OpenAI documentation and usage: https://beta.openai.com/docs/guides
 
 #### Contract
 - Live deployment: [E2DKhSpqaeVfksg-YfWmrR4ZI667X58ndTJzjyikXIc](https://api.exm.dev/read/E2DKhSpqaeVfksg-YfWmrR4ZI667X58ndTJzjyikXIc)
