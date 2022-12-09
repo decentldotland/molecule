@@ -10,6 +10,24 @@
 ## Synopsis
 Molecule is a developer tooling API for EXM developers that's built on top of the `deterministicFetch` EXM feature. `molecule.sh` is composed of multiple reusable EXM components/codes to facilitate writing EXM functions.
 
+## Build & run
+
+```console
+git pull https://github.com/decentldotland/molecule.git
+
+touch .env 
+
+npm install && npm run molecules
+```
+
+Note: copy the parameters from the `.env.example` and fill the values with your API tokens
+
+```
+CHAT_API_TOKEN=...
+OPENAI_API_KEY=...
+OPENAI_ORGANIZATION=...
+``` 
+
 ## molecule.sh structure
 
 ### Tree
@@ -27,7 +45,8 @@ molecules/
 ├── └── state
 │   └── soark/domain
 └── ai/
-    └── chatgpt
+└── └── chatgpt
+    └── gpt3
 ```
 ### Endpoints
 | molecule  | endpoint | atoms | stability |
