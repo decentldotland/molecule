@@ -30,7 +30,7 @@ export async function handle(state, action) {
   async function _moleculeSignatureVerification(caller, message, signature) {
     try {
       const isValid = await EXM.deterministicFetch(
-        `${zil_molecule_endpoint}/auth/${caller}/${message}/${signature}`
+        `${zil_molecule_endpoint}/zil-auth/${caller}/${message}/${signature}`
       );
       ContractAssert(isValid.asJSON()?.result, "unauthorized caller");
       return isValid.asJSON();
