@@ -12,6 +12,7 @@ import { getArkState } from "./molecules/ark/atoms/state.js";
 import { resolveArkUser } from "./molecules/ark/atoms/resolve.js";
 import { isDomainOwner } from "./molecules/ark/atoms/soArk.js";
 import { GPT3 } from "./molecules/ai/atoms/GPT3.js";
+import { isZilSigner } from "./molecules/zil/atoms/verifySigner.js";
 import base64url from "base64url";
 
 const app = express();
@@ -78,6 +79,22 @@ app.get("/auth/:pubkey/:message/:signature", async (req, res) => {
     return;
   } catch (error) {
     res.send({ result: false });
+    return;
+  }
+});
+
+app.get("/zil-auth/:pubkey/:message/:signature", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "zil"), true);
+    const { pubkey, message, signature } = req.params;
+    const response = await isZilSigner(pubkey, message, signature);
+    res.send(response);
+    return;
+  } catch (error) {
+    console.log(error)
+    res.send({ result: false, address: null });
     return;
   }
 });
