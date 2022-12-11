@@ -18,5 +18,5 @@ npm i -g @execution-machine/sdk
 To register a `name` in the contract example, you have first to sign with your wallet the message used for verification in the contract's example which is `hello world` 
 
 ```console
-exm function:write sxXyYeps7Lo7_4qZ0pyNScn99UehACYEH7vapNBFBwM --input '{"function": "register", "name": "buildooor", "signature": "$YOUR_ZILLIQA_SIGNATURE", "caller": "$ZILLIQA_PUBLIC_KEY"}' --token EXM_TOKEN_ID
+exm function:write 0vvqqDUHuVFtYijYNTLAkeQh6ZBoRZD29uOClU5_um8 --input '{"function": "register", "name": "buildooor", "signature": "$YOUR_ZILLIQA_SIGNATURE", "caller": "$ZILLIQA_PUBLIC_KEY"}' --token EXM_TOKEN_ID
 ```
