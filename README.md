@@ -29,7 +29,6 @@ OPENAI_ORGANIZATION=...
 ``` 
 
 ## molecule.sh structure
-
 ### Tree
 
 ```
@@ -42,8 +41,10 @@ molecules/
 ├── └── auth
 └── zil/
 ├── └── zil-auth
-└── stx/
-    └── stx-auth
+├── stx/
+│   └── stx-auth
+└── substrate/
+    └── substrate-auth
 └── ark/
 ├── ├── resolve
 ├── └── state
@@ -60,7 +61,8 @@ molecules/
 | Solana (`sol`) | `sol.molecule.sh` | `auth` | 🟩 |
 | Zilliqa (`zil`) | `zil.molecule.sh` | `zil-auth` | 🟩 |
 | Stacks (`stx`) | `stx.molecule.sh` | `stx-auth` | 🟩 | 
-| Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 |
+| Substrate.io (`substrate`) | `substrate.molecule.sh` | `substrate-auth` | 🟩 |
+| Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
 | AI (`ai`) | `ai.molecule.sh` | `gpt3` `chatgpt` | 🟩/🟨 |
 
@@ -86,6 +88,8 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 - Zilliqa authentication: Simple name registry contract. [example](./examples/zil-signing/wtf.md)
 
 - Stacks authentication: Simple name registry contract. [example](./examples/stx-signing/wtf.md)
+
+- Substrate.io authentication: Simple name registry contract. [example](./examples/substrate-signing/wtf.md)
 
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
