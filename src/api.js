@@ -14,6 +14,7 @@ import { isDomainOwner } from "./molecules/ark/atoms/soArk.js";
 import { GPT3 } from "./molecules/ai/atoms/GPT3.js";
 import { isZilSigner } from "./molecules/zil/atoms/verifySigner.js";
 import { isStxSigner } from "./molecules/stx/atoms/verifySigner.js";
+import { isSubstrateSigner } from "./molecules/substrate/atoms/verifySigner.js";
 import base64url from "base64url";
 
 const app = express();
@@ -94,7 +95,6 @@ app.get("/zil-auth/:pubkey/:message/:signature", async (req, res) => {
     res.send(response);
     return;
   } catch (error) {
-    console.log(error)
     res.send({ result: false, address: null });
     return;
   }
@@ -110,7 +110,21 @@ app.get("/stx-auth/:pubkey/:message/:signature", async (req, res) => {
     res.send(response);
     return;
   } catch (error) {
-    console.log(error)
+    res.send({ result: false, address: null });
+    return;
+  }
+});
+
+app.get("/substrate-auth/:pubkey/:message/:signature", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "substrate"), true);
+    const { pubkey, message, signature } = req.params;
+    const response = await isSubstrateSigner(pubkey, message, signature);
+    res.send(response);
+    return;
+  } catch (error) {
     res.send({ result: false, address: null });
     return;
   }
