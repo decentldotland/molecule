@@ -6,5 +6,6 @@ export const MOLECULES = [
   "sol",
   "zil",
   "stx",
+  "substrate",
   "rand",
 ];
