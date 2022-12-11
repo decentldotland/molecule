@@ -41,7 +41,9 @@ molecules/
 └── sol/ ~> molecule
 ├── └── auth
 └── zil/
-    └── zil-auth
+├── └── zil-auth
+└── stx/
+    └── stx-auth
 └── ark/
 ├── ├── resolve
 ├── └── state
@@ -57,6 +59,7 @@ molecules/
 | EVM (`evm`)      | `evm.molecule.sh`     | `signer` | 🟩 |
 | Solana (`sol`) | `sol.molecule.sh` | `auth` | 🟩 |
 | Zilliqa (`zil`) | `zil.molecule.sh` | `zil-auth` | 🟩 |
+| Stacks (`stx`) | `stx.molecule.sh` | `stx-auth` | 🟩 | 
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 |
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
 | AI (`ai`) | `ai.molecule.sh` | `gpt3` `chatgpt` | 🟩/🟨 |
@@ -82,12 +85,13 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 
 - Zilliqa authentication: Simple name registry contract. [example](./examples/zil-signing/wtf.md)
 
+- Stacks authentication: Simple name registry contract. [example](./examples/stx-signing/wtf.md)
+
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
 - Interacting with ChatGPT from EXM smart contracts. [example](./examples/chat-gpt/wtf.md)
 
 - GPT3 integration in a smart contract. [example](./examples/gpt3/wtf.md) 
-
 
 ## License
 This project is licensed under the [MIT License](./LICENSE)
