@@ -1,5 +1,5 @@
 ## About
-The EXM contract below is an example implementation of a contract that uses Zilliqa for contract's caller authentication (`action.caller`), empowered by `zil-auth` atom of `sol` molecule.
+The EXM contract below is an example implementation of a contract that uses Zilliqa for contract's caller authentication (`action.caller`), empowered by `zil-auth` atom of `zil` molecule.
 
 #### Contract
 - Live deployment: [0vvqqDUHuVFtYijYNTLAkeQh6ZBoRZD29uOClU5_um8](https://api.exm.dev/read/0vvqqDUHuVFtYijYNTLAkeQh6ZBoRZD29uOClU5_um8)
