@@ -44,7 +44,9 @@ molecules/
 ├── stx/
 │   └── stx-auth
 └── substrate/
-    └── substrate-auth
+├── └── substrate-auth
+└── trx/
+    └── trx-auth
 └── ark/
 ├── ├── resolve
 ├── └── state
@@ -62,6 +64,7 @@ molecules/
 | Zilliqa (`zil`) | `zil.molecule.sh` | `zil-auth` | 🟩 |
 | Stacks (`stx`) | `stx.molecule.sh` | `stx-auth` | 🟩 | 
 | Substrate.io (`substrate`) | `substrate.molecule.sh` | `substrate-auth` | 🟩 |
+| TRON (`trx`) | `trx.molecule.sh` | `trx-auth` | 🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
 | AI (`ai`) | `ai.molecule.sh` | `gpt3` `chatgpt` | 🟩/🟨 |
@@ -90,6 +93,8 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 - Stacks authentication: Simple name registry contract. [example](./examples/stx-signing/wtf.md)
 
 - Substrate.io authentication: Simple name registry contract. [example](./examples/substrate-signing/wtf.md)
+
+- TRON authentication: Simple name registry contract. [example](./examples/trx-signing/wtf.md)
 
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
