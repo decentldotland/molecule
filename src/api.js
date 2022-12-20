@@ -16,6 +16,7 @@ import { isZilSigner } from "./molecules/zil/atoms/verifySigner.js";
 import { isStxSigner } from "./molecules/stx/atoms/verifySigner.js";
 import { isSubstrateSigner } from "./molecules/substrate/atoms/verifySigner.js";
 import { isTrxSigner } from "./molecules/trx/atoms/verifySigner.js";
+import { isIcpSigner } from "./molecules/icp/atoms/verifySigner.js";
 import base64url from "base64url";
 
 const app = express();
@@ -138,6 +139,21 @@ app.get("/trx-auth/:address/:message/:signature", async (req, res) => {
     assert.equal(checkSubdomain(req, "trx"), true);
     const { address, message, signature } = req.params;
     const response = await isTrxSigner(message, address, signature);
+    res.send(response);
+    return;
+  } catch (error) {
+    res.send({ result: false, address: null });
+    return;
+  }
+});
+
+app.get("/icp-auth/:pubkey/:message/:signature", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "icp"), true);
+    const { pubkey, message, signature } = req.params;
+    const response = await isIcpSigner(message, pubkey, signature);
     res.send(response);
     return;
   } catch (error) {

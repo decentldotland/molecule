@@ -46,7 +46,9 @@ molecules/
 └── substrate/
 ├── └── substrate-auth
 └── trx/
-    └── trx-auth
+├── └── trx-auth
+└── icp/
+    └── icp-auth
 └── ark/
 ├── ├── resolve
 ├── └── state
@@ -65,6 +67,7 @@ molecules/
 | Stacks (`stx`) | `stx.molecule.sh` | `stx-auth` | 🟩 | 
 | Substrate.io (`substrate`) | `substrate.molecule.sh` | `substrate-auth` | 🟩 |
 | TRON (`trx`) | `trx.molecule.sh` | `trx-auth` | 🟩 |
+| Internet Protocol (`ICP`) | `icp.molecule.sh` | `icp-auth` |  🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
 | AI (`ai`) | `ai.molecule.sh` | `gpt3` `chatgpt` | 🟩/🟨 |
@@ -96,12 +99,13 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 
 - TRON authentication: Simple name registry contract. [example](./examples/trx-signing/wtf.md)
 
+- ICP authentication: Simple name registry contract. [example](./examples/icp-signing/wtf.md)
+
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
 - Interacting with ChatGPT from EXM smart contracts. [example](./examples/chat-gpt/wtf.md)
 
 - GPT3 integration in a smart contract. [example](./examples/gpt3/wtf.md) 
-
 ## License
 This project is licensed under the [MIT License](./LICENSE)
 
