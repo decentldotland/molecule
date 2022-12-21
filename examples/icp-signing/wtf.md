@@ -1,5 +1,5 @@
 ## About
-The EXM contract below is an example implementation of a contract that uses Internet Computer [ICP](https://dfinity.org) for contract's caller authentication (`action.caller`), empowered by `icp-auth` atom of `icp` molecule.
+The EXM contract below is an example implementation of a contract that uses Internet Computer Protocol [ICP](https://dfinity.org) for contract's caller authentication (`action.caller`), empowered by `icp-auth` atom of `icp` molecule.
 
 #### Contract
 - Live deployment: [sAvaOf5cqCoXeF1kJmpEMZ7omjrjsScmcpNlSF_gl10](https://api.exm.dev/read/sAvaOf5cqCoXeF1kJmpEMZ7omjrjsScmcpNlSF_gl10)
