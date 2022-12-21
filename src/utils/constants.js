@@ -8,6 +8,7 @@ export const MOLECULES = [
   "stx",
   "trx",
   "icp",
+  "ton",
   "substrate",
   "rand",
 ];
