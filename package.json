@@ -1,6 +1,6 @@
 {
   "name": "molecule",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "description": "reusable EXM components and helper functions for a faster development",
   "main": "./src/api.js",
@@ -44,6 +44,7 @@
     "nacl": "^0.1.3",
     "openai": "^3.1.0",
     "secp256k1": "^4.0.3",
+    "tonweb": "^0.0.58",
     "tronweb": "^4.4.0",
     "tweetnacl": "^1.0.3"
   }
