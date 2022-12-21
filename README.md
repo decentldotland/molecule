@@ -73,7 +73,7 @@ molecules/
 | TON (`ton`) | `ton.molecule.sh` | `ton-auth` |  🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
-| AI (`ai`) | `ai.molecule.sh` | `gpt3` `chatgpt` | 🟩/🟨 |
+| AI (`ai`) | `ai.molecule.sh` | `gpt3` | 🟩/🟨 |
 
 
 
@@ -107,8 +107,6 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 - TON authentication: Simple name registry contract. [example](./examples/ton-signing/wtf.md)
 
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
-
-- Interacting with ChatGPT from EXM smart contracts. [example](./examples/chat-gpt/wtf.md)
 
 - GPT3 integration in a smart contract. [example](./examples/gpt3/wtf.md) 
 
