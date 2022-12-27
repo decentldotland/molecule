@@ -18,6 +18,7 @@ import { isSubstrateSigner } from "./molecules/substrate/atoms/verifySigner.js";
 import { isTrxSigner } from "./molecules/trx/atoms/verifySigner.js";
 import { isIcpSigner } from "./molecules/icp/atoms/verifySigner.js";
 import { isTonSigner } from "./molecules/ton/atoms/verifySigner.js";
+import { readNearOracleState } from "./molecules/near/atoms/read-contract.js";
 import base64url from "base64url";
 
 const app = express();
@@ -175,6 +176,21 @@ app.get("/ton-auth/:pubkey/:message/:signature", async (req, res) => {
   } catch (error) {
     console.log(error)
     res.send({ result: false, address: null });
+    return;
+  }
+});
+
+app.get("/n-view-state/:network/:address", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "near"), true);
+    const { network, address } = req.params;
+    const response = await readNearOracleState(network, address);
+    res.send(response);
+    return;
+  } catch (error) {
+    res.send({ result: null});
     return;
   }
 });
