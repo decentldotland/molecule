@@ -173,6 +173,7 @@ app.get("/ton-auth/:pubkey/:message/:signature", async (req, res) => {
     res.send(response);
     return;
   } catch (error) {
+    console.log(error)
     res.send({ result: false, address: null });
     return;
   }
@@ -237,21 +238,6 @@ app.get("/soark/domain/:network/:address/:type/:domain", async (req, res) => {
     return;
   }
 });
-
-// app.get("/chatgpt/:input", async (req, res) => {
-//   try {
-//     res.setHeader("Content-Type", "application/json");
-
-//     assert.equal(checkSubdomain(req, "ai"), true);
-//     const response = await chatGpt(req.params?.input);
-//     res.send({ result: response });
-//     return;
-//   } catch (error) {
-//     console.log(error);
-//     res.send({ result: null });
-//     return;
-//   }
-// });
 
 app.get(
   "/gpt3/:prompt/:model/:max_tokens/:temperature/:top_p?",

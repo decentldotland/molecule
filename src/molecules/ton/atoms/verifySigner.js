@@ -1,24 +1,13 @@
-import nacl from "tweetnacl";
-import TonWeb from "tonweb";
-import { encodedToRaw } from "../../icp/utils/account.js";
-
-const tonweb = new TonWeb();
+import { TONWEB_ENDPOINT } from "../utils/constants.js";
+import axios from "axios";
 
 export async function isTonSigner(message, pubkey, signature) {
   try {
-    const decodedMessage = Buffer.from(atob(message));
-    const ua8PublicKey = await encodedToRaw(pubkey);
-    const u8aSignature = await encodedToRaw(signature);
-
-    const isValid = nacl.sign.detached.verify(
-      new Uint8Array(decodedMessage),
-      u8aSignature,
-      ua8PublicKey
+    const result = await axios.get(
+      `${TONWEB_ENDPOINT}/${pubkey}/${message}/${signature}`
     );
-    const wallet = tonweb.wallet.create({ publicKey: ua8PublicKey });
-    const address = (await wallet.getAddress())?.toString(true, true, false);
 
-    return { result: isValid, address: address };
+    return result?.data;;
   } catch (error) {
     return { result: false, address: null };
   }
