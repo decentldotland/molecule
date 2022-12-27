@@ -50,7 +50,9 @@ molecules/
 └── icp/
 ├── └── icp-auth
 └── ton/
-    └── ton-auth
+├── └── ton-auth
+└── near/
+    └── n-view-state
 └── ark/
 ├── ├── resolve
 ├── └── state
@@ -71,6 +73,7 @@ molecules/
 | TRON (`trx`) | `trx.molecule.sh` | `trx-auth` | 🟩 |
 | Internet Protocol (`ICP`) | `icp.molecule.sh` | `icp-auth` |  🟩 |
 | TON (`ton`) | `ton.molecule.sh` | `ton-auth` |  🟩 |
+| NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
 | AI (`ai`) | `ai.molecule.sh` | `gpt3` | 🟩/🟨 |
