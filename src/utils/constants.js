@@ -10,6 +10,9 @@ export const MOLECULES = [
   "icp",
   "ton",
   "near",
+  "massa",
   "substrate",
   "rand",
 ];
+
+export const MOLECULE_API_ENDPOINT = `https://molecule-apis-wrapper.herokuapp.com`;

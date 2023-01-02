@@ -1,5 +1,5 @@
 ## About
-The EXM contract below is an example implementation of a contract that uses TON network [ICP](https://ton.org) for contract's caller authentication (`action.caller`), empowered by `ton-auth` atom of `ton` molecule.
+The EXM contract below is an example implementation of a contract that uses TON network for contract's caller authentication (`action.caller`), empowered by `ton-auth` atom of `ton` molecule.
 
 #### Contract
 - Live deployment: [lpLm1AKAhY-AZPMFwXVOLkMe7UDtaoNiG3keNMJEapg](https://api.exm.dev/read/lpLm1AKAhY-AZPMFwXVOLkMe7UDtaoNiG3keNMJEapg)

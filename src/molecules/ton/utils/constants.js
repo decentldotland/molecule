@@ -1,1 +1,0 @@
-export const TONWEB_ENDPOINT = `https://tonweb-wrapper.herokuapp.com/tonweb`;
