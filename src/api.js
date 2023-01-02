@@ -18,6 +18,7 @@ import { isSubstrateSigner } from "./molecules/substrate/atoms/verifySigner.js";
 import { isTrxSigner } from "./molecules/trx/atoms/verifySigner.js";
 import { isIcpSigner } from "./molecules/icp/atoms/verifySigner.js";
 import { isTonSigner } from "./molecules/ton/atoms/verifySigner.js";
+import { isMassaSigner } from "./molecules/massa/atoms/verifySigner.js";
 import { readNearOracleState } from "./molecules/near/atoms/read-contract.js";
 import base64url from "base64url";
 
@@ -171,6 +172,22 @@ app.get("/ton-auth/:pubkey/:message/:signature", async (req, res) => {
     assert.equal(checkSubdomain(req, "ton"), true);
     const { pubkey, message, signature } = req.params;
     const response = await isTonSigner(message, pubkey, signature);
+    res.send(response);
+    return;
+  } catch (error) {
+    console.log(error)
+    res.send({ result: false, address: null });
+    return;
+  }
+});
+
+app.get("/massa-auth/:pubkey/:message/:signature", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "massa"), true);
+    const { pubkey, message, signature } = req.params;
+    const response = await isMassaSigner(message, pubkey, signature);
     res.send(response);
     return;
   } catch (error) {
