@@ -50,9 +50,11 @@ molecules/
 └── icp/
 ├── └── icp-auth
 └── ton/
-├── └── ton-auth
+├── └── ton-auth/
+└── massa/
+    └── massa-auth
 └── near/
-    └── n-view-state
+└── └── n-view-state
 └── ark/
 ├── ├── resolve
 ├── └── state
@@ -73,6 +75,7 @@ molecules/
 | TRON (`trx`) | `trx.molecule.sh` | `trx-auth` | 🟩 |
 | Internet Protocol (`ICP`) | `icp.molecule.sh` | `icp-auth` |  🟩 |
 | TON (`ton`) | `ton.molecule.sh` | `ton-auth` |  🟩 |
+| Massa (`massa`) | `massa.molecule.sh` | `massa-auth` |  🟩 |
 | NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
@@ -108,6 +111,8 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 - ICP authentication: Simple name registry contract. [example](./examples/icp-signing/wtf.md)
 
 - TON authentication: Simple name registry contract. [example](./examples/ton-signing/wtf.md)
+
+- Massa authentication: Simple name registry contract. [example](./examples/massa-signing/wtf.md)
 
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
