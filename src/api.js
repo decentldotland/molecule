@@ -151,13 +151,12 @@ app.get("/deso-auth/:address/:message/:signature", async (req, res) => {
   try {
     res.setHeader("Content-Type", "application/json");
 
-    // assert.equal(checkSubdomain(req, "deso"), true);
+    assert.equal(checkSubdomain(req, "deso"), true);
     const { address, message, signature } = req.params;
     const response = await isDesoSigner(address, message, signature);
     res.send(response);
     return;
   } catch (error) {
-    console.error('ERROR', error)
     res.send({ result: false, address: null });
     return;
   }
