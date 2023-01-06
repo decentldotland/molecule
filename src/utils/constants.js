@@ -9,4 +9,5 @@ export const MOLECULES = [
   "trx",
   "substrate",
   "rand",
+  "deso"
 ];

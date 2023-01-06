@@ -16,6 +16,7 @@ import { isZilSigner } from "./molecules/zil/atoms/verifySigner.js";
 import { isStxSigner } from "./molecules/stx/atoms/verifySigner.js";
 import { isSubstrateSigner } from "./molecules/substrate/atoms/verifySigner.js";
 import { isTrxSigner } from "./molecules/trx/atoms/verifySigner.js";
+import { isDesoSigner } from './molecules/deso/atoms/verifySigner.js';
 import base64url from "base64url";
 
 const app = express();
@@ -145,6 +146,22 @@ app.get("/trx-auth/:address/:message/:signature", async (req, res) => {
     return;
   }
 });
+
+app.get("/deso-auth/:address/:message/:signature", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    // assert.equal(checkSubdomain(req, "deso"), true);
+    const { address, message, signature } = req.params;
+    const response = await isDesoSigner(address, message, signature);
+    res.send(response);
+    return;
+  } catch (error) {
+    console.error('ERROR', error)
+    res.send({ result: false, address: null });
+    return;
+  }
+})
 
 app.get("/generate/:min/:max", async (req, res) => {
   try {
