@@ -19,6 +19,7 @@ import { isTrxSigner } from "./molecules/trx/atoms/verifySigner.js";
 import { isIcpSigner } from "./molecules/icp/atoms/verifySigner.js";
 import { isTonSigner } from "./molecules/ton/atoms/verifySigner.js";
 import { isMassaSigner } from "./molecules/massa/atoms/verifySigner.js";
+import { isFuelSigner } from "./molecules/fuel/atoms/verifySigner.js";
 import { readNearOracleState } from "./molecules/near/atoms/read-contract.js";
 import base64url from "base64url";
 
@@ -196,6 +197,23 @@ app.get("/massa-auth/:pubkey/:message/:signature", async (req, res) => {
     return;
   }
 });
+
+app.get("/fuel-auth/:address/:message/:signature", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "fuel"), true);
+    const { address, message, signature } = req.params;
+    const response = await isFuelSigner(message, address, signature);
+    res.send(response);
+    return;
+  } catch (error) {
+    console.log(error)
+    res.send({ result: false, address: null });
+    return;
+  }
+});
+
 
 app.get("/n-view-state/:network/:address", async (req, res) => {
   try {
