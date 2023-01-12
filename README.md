@@ -54,7 +54,9 @@ molecules/
 └── massa/
 ├── └── massa-auth
 └── fuel/
-    └── fuel-auth
+├── └── fuel-auth
+└── tez/
+    └── tez-auth
 └── near/
 └── └── n-view-state
 └── ark/
@@ -79,6 +81,7 @@ molecules/
 | TON (`ton`) | `ton.molecule.sh` | `ton-auth` |  🟩 |
 | Massa (`massa`) | `massa.molecule.sh` | `massa-auth` |  🟩 |
 | Fuel Network (`fuel`) | `fuel.molecule.sh` | `fuel-auth` |  🟩 |
+| Tezos (`tez` | `tez.molecule.sh` | `tez-auth` | 🟩 |
 | NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
@@ -119,9 +122,11 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 
 - Fuel authentication: Simple name registry contract. [example](./examples/fuel-signing/wtf.md)
 
+- Tezos authentication: Simple name registry contract. [example](./examples/tez-signing/wtf.md)
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
-- GPT3 integration in a smart contract. [example](./examples/gpt3/wtf.md)
+- GPT3 integration in a smart contract. [example](./examples/gpt3/wtf.md) 
+
 
 ## License
 This project is licensed under the [MIT License](./LICENSE)
