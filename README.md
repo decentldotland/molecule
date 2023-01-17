@@ -29,6 +29,7 @@ OPENAI_ORGANIZATION=...
 ``` 
 
 ## molecule.sh structure
+
 ### Tree
 
 ```
@@ -56,7 +57,9 @@ molecules/
 └── fuel/
 ├── └── fuel-auth
 └── tez/
-    └── tez-auth
+├── └── tez-auth
+└── aptos/
+    └── aptos-auth
 └── near/
 └── └── n-view-state
 └── ark/
@@ -82,6 +85,7 @@ molecules/
 | Massa (`massa`) | `massa.molecule.sh` | `massa-auth` |  🟩 |
 | Fuel Network (`fuel`) | `fuel.molecule.sh` | `fuel-auth` |  🟩 |
 | Tezos (`tez` | `tez.molecule.sh` | `tez-auth` | 🟩 |
+| Aptos (`aptos` | `aptos.molecule.sh` | `aptos-auth` | 🟩 |
 | NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
@@ -123,6 +127,9 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 - Fuel authentication: Simple name registry contract. [example](./examples/fuel-signing/wtf.md)
 
 - Tezos authentication: Simple name registry contract. [example](./examples/tez-signing/wtf.md)
+
+- Aptos authentication: Simple name registry contract. [example](./examples/aptos-signing/wtf.md)
+
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
 - GPT3 integration in a smart contract. [example](./examples/gpt3/wtf.md) 
