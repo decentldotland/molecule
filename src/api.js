@@ -23,6 +23,7 @@ import { isFuelSigner } from "./molecules/fuel/atoms/verifySigner.js";
 import { isTezSigner } from "./molecules/tez/atoms/verifySigner.js";
 import { isAptosSigner } from "./molecules/aptos/atoms/verifySigner.js";
 import { readNearOracleState } from "./molecules/near/atoms/read-contract.js";
+import { getEverTxObject } from "./molecules/everpay/atoms/tx.js";
 import base64url from "base64url";
 
 const app = express();
@@ -242,6 +243,21 @@ app.get("/aptos-auth/:pubkey/:message/:signature", async (req, res) => {
     return;
   } catch (error) {
     res.send({ result: false, address: null });
+    return;
+  }
+});
+
+app.get("/everpay/tx/:txid", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "ever"), true);
+    const { txid } = req.params;
+    const response = await getEverTxObject(txid);
+    res.send(response);
+    return;
+  } catch (error) {
+    res.send({ molecule_error: "invalid_txid" });
     return;
   }
 });

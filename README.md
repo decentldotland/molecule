@@ -59,9 +59,11 @@ molecules/
 └── tez/
 ├── └── tez-auth
 └── aptos/
-    └── aptos-auth
+└── └── aptos-auth
 └── near/
-└── └── n-view-state
+└── └── n-view-state/
+└── ever/
+    └── tx
 └── ark/
 ├── ├── resolve
 ├── └── state
@@ -87,6 +89,7 @@ molecules/
 | Tezos (`tez` | `tez.molecule.sh` | `tez-auth` | 🟩 |
 | Aptos (`aptos` | `aptos.molecule.sh` | `aptos-auth` | 🟩 |
 | NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
+| Everpay (`ever`) | `ever.molecule.sh` | `tx` | 🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
 | AI (`ai`) | `ai.molecule.sh` | `gpt3` | 🟩/🟨 |

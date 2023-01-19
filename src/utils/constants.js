@@ -13,6 +13,7 @@ export const MOLECULES = [
   "near",
   "aptos",
   "massa",
+  "ever",
   "fuel",
   "substrate",
   "rand",
