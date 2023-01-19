@@ -11,7 +11,8 @@ export async function isSubstrateSigner(publicKey, message, signature) {
     const address = {
       generic: encodeAddress(ua8PublicKey, 42),
       kusama: encodeAddress(ua8PublicKey, 8),
-      polkadot: encodeAddress(ua8PublicKey, 0)
+      polkadot: encodeAddress(ua8PublicKey, 0),
+      astar: encodeAddress(ua8PublicKey, 5),
 
     };
 
