@@ -24,6 +24,7 @@ import { isTezSigner } from "./molecules/tez/atoms/verifySigner.js";
 import { isAptosSigner } from "./molecules/aptos/atoms/verifySigner.js";
 import { readNearOracleState } from "./molecules/near/atoms/read-contract.js";
 import { getEverTxObject } from "./molecules/everpay/atoms/tx.js";
+import { getTokenPrice } from "./molecules/redstone/atoms/oracle.js";
 import base64url from "base64url";
 
 const app = express();
@@ -262,7 +263,20 @@ app.get("/everpay/tx/:txid", async (req, res) => {
   }
 });
 
+app.get("/redstone/price/:ticker", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
 
+    assert.equal(checkSubdomain(req, "redstone"), true);
+    const { ticker } = req.params;
+    const response = await getTokenPrice(ticker);
+    res.send(response);
+    return;
+  } catch (error) {
+    res.send({ molecule_error: "redstone_error" });
+    return;
+  }
+});
 
 app.get("/n-view-state/:network/:address", async (req, res) => {
   try {
