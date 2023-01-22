@@ -15,6 +15,7 @@ export const MOLECULES = [
   "massa",
   "ever",
   "fuel",
+  "redstone",
   "substrate",
   "rand",
 ];
