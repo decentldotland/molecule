@@ -63,7 +63,9 @@ molecules/
 └── near/
 └── └── n-view-state/
 └── ever/
-    └── tx
+├── └── tx
+└── redstone/
+    └── price
 └── ark/
 ├── ├── resolve
 ├── └── state
@@ -90,6 +92,7 @@ molecules/
 | Aptos (`aptos` | `aptos.molecule.sh` | `aptos-auth` | 🟩 |
 | NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
 | Everpay (`ever`) | `ever.molecule.sh` | `tx` | 🟩 |
+| Redstone (`redstone`) | `redstone.molecule.sh` | `price` | 🟩 |
 | Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
 | AI (`ai`) | `ai.molecule.sh` | `gpt3` | 🟩/🟨 |
@@ -132,6 +135,8 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 - Tezos authentication: Simple name registry contract. [example](./examples/tez-signing/wtf.md)
 
 - Aptos authentication: Simple name registry contract. [example](./examples/aptos-signing/wtf.md)
+
+- Redstone price oracle. [example](./examples/redstone-oracle/wtf.md)
 
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
