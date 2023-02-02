@@ -10,6 +10,7 @@ export const MOLECULES = [
   "icp",
   "ton",
   "tez",
+  "exm",
   "near",
   "aptos",
   "massa",
