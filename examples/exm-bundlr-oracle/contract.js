@@ -12,7 +12,7 @@ export async function handle(state, action) {
     const caller = input.caller;
     const signature = input.signature;
 
-    ContractAssert(post.trim().length, "error invalid name");
+    ContractAssert(text.trim().length, "error invalid post text");
     ContractAssert(caller && signature, "missing required arguments");
     ContractAssert(
       !signatures.includes(signature),
@@ -42,8 +42,8 @@ export async function handle(state, action) {
       const req = await EXM.deterministicFetch(
         `${exm_molecule_endpoint}/exm-bundlr/${encoded_body}/${encoded_tags}/${type}`
       );
-      ContractAssert(req.asJSON()?.id, "unauthorized caller");
-      return id;
+      ContractAssert(req.asJSON()?.id, "invalid Arweave TXID");
+      return req.asJSON()?.id;
     } catch (error) {
       throw new ContractError("molecule res error");
     }
