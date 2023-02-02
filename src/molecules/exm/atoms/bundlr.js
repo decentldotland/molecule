@@ -6,7 +6,7 @@ export async function postExmData(encoded_data, encoded_tags, type) {
   try {
     assert(["string", "buffer"].includes(type), true);
     const data =
-      type === "buffer" ? decodeBase64Buffer(encoded_data) : btoa(encoded_data);
+      type === "buffer" ? decodeBase64Buffer(encoded_data) : atob(encoded_data);
     const payload = {
       data: data,
       type: type,
@@ -40,5 +40,3 @@ function decodeBase64Buffer(encoded_buffer) {
     throw error;
   }
 }
-
-// encode buffer btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)))
