@@ -59,13 +59,15 @@ molecules/
 └── tez/
 ├── └── tez-auth
 └── aptos/
-└── └── aptos-auth
+└── └── aptos-auth/
+└── exm/
+    └── exm-bundlr
 └── near/
 └── └── n-view-state/
 └── ever/
 ├── └── tx
 └── redstone/
-    └── price
+└── └── price
 └── ark/
 ├── ├── resolve
 ├── └── state
@@ -90,6 +92,7 @@ molecules/
 | Fuel Network (`fuel`) | `fuel.molecule.sh` | `fuel-auth` |  🟩 |
 | Tezos (`tez` | `tez.molecule.sh` | `tez-auth` | 🟩 |
 | Aptos (`aptos` | `aptos.molecule.sh` | `aptos-auth` | 🟩 |
+| EXM (`exm` | `exm.molecule.sh` | `exm-bundlr` | 🟩 |
 | NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
 | Everpay (`ever`) | `ever.molecule.sh` | `tx` | 🟩 |
 | Redstone (`redstone`) | `redstone.molecule.sh` | `price` | 🟩 |
@@ -137,6 +140,8 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 - Aptos authentication: Simple name registry contract. [example](./examples/aptos-signing/wtf.md)
 
 - Redstone price oracle. [example](./examples/redstone-oracle/wtf.md)
+
+- Decentralized Public Square using `evm-auth` & `exm-bundlr` atoms. [example](./examples/exm-bundlr-oracle/wtf.md)
 
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
