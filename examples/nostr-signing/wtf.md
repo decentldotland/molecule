@@ -3,7 +3,7 @@ This EXM contract combines two molecules: `nostr-auth` and `exm` ; however, the 
 
 
 #### Contract
-- Live deployment: [UjIMA7C49TRA_oII4-_3raYoX44Pjl4DwIGtGY7p0zM](https://api.exm.dev/read/UjIMA7C49TRA_oII4-_3raYoX44Pjl4DwIGtGY7p0zM)
+- Live deployment: [UDyWGh541uXrCMKhAnlzYkCIstZiqJNV5S96wy-RA0g](https://api.exm.dev/read/UDyWGh541uXrCMKhAnlzYkCIstZiqJNV5S96wy-RA0g)
 - source code: [./contract.js](./contract.js)
 
 ## Prerequisites
@@ -47,5 +47,5 @@ const event_for_molecule = (btoa(JSON.stringify(event)));
 ### Second Step: contract interaction
 
 ```console
-exm function:write UjIMA7C49TRA_oII4-_3raYoX44Pjl4DwIGtGY7p0zM --input '{"function": "post", "text": "$POST_STRING_BODY", "nostr_event": "$EVENT_FOR_MOLECULE_STEP_1", "caller": "$NOSTR_PUBKEY"}' --token EXM_TOKEN_ID
+exm function:write UDyWGh541uXrCMKhAnlzYkCIstZiqJNV5S96wy-RA0g --input '{"function": "post", "text": "$POST_STRING_BODY", "nostr_event": "$EVENT_FOR_MOLECULE_STEP_1", "caller": "$NOSTR_PUBKEY"}' --token EXM_TOKEN_ID
 ```
