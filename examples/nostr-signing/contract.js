@@ -12,21 +12,23 @@ export async function handle(state, action) {
     const caller = input.caller;
     const nostr_event = input.nostr_event;
 
-    const event = JSON.parse(atob(nostr_event));
     ContractAssert(text.trim().length, "error invalid post text");
     ContractAssert(caller && nostr_event, "missing required arguments");
+
     const event = JSON.parse(atob(nostr_event));
     ContractAssert(
       !signatures.includes(event?.sig),
       "error signed message used"
-    );
+    )
 
     const message = btoa(verification_message);
-    await _moleculeSignatureVerification(nostr_event, caller, message);
+    const address = await _moleculeSignatureVerification(nostr_event, caller, message);
+
     const arweaveTxId = await _moleculeExmBundlr(text);
     state.posts.push({
-      account: caller,
+      account: address,
       post_id: arweaveTxId,
+      proof: event?.sig,
     });
 
     signatures.push(event?.sig);
@@ -57,6 +59,7 @@ export async function handle(state, action) {
         `${nostr_molecule_endpoint}/nostr-auth/${encoded_event}/${pubkey}/${expected_message}`
       );
       ContractAssert(isValid.asJSON()?.result, "unauthorized caller");
+      return isValid.asJSON()?.address;
     } catch (error) {
       throw new ContractError("molecule res error");
     }
