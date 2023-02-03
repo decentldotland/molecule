@@ -60,8 +60,10 @@ molecules/
 ├── └── tez-auth
 └── aptos/
 └── └── aptos-auth/
+└── nostr/
+    └── nostr-auth
 └── exm/
-    └── exm-bundlr
+└── └── exm-bundlr
 └── near/
 └── └── n-view-state/
 └── ever/
@@ -92,6 +94,7 @@ molecules/
 | Fuel Network (`fuel`) | `fuel.molecule.sh` | `fuel-auth` |  🟩 |
 | Tezos (`tez` | `tez.molecule.sh` | `tez-auth` | 🟩 |
 | Aptos (`aptos` | `aptos.molecule.sh` | `aptos-auth` | 🟩 |
+| Nostr (`nostr` | `nostr.molecule.sh` | `nostr-auth` | 🟩 |
 | EXM (`exm` | `exm.molecule.sh` | `exm-bundlr` | 🟩 |
 | NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
 | Everpay (`ever`) | `ever.molecule.sh` | `tx` | 🟩 |
@@ -143,9 +146,11 @@ The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to
 
 - Decentralized Public Square using `evm-auth` & `exm-bundlr` atoms. [example](./examples/exm-bundlr-oracle/wtf.md)
 
+- Decentralized Public Square using `nostr-auth` & `exm-bundlr` atoms. [example](./examples/nostr-signing/wtf.md)
+
 - Getting [Ark Protocol](https://ark.decent.land) identity object. [example](./examples/ark-resolving/wtf.md)
 
-- GPT3 integration in a smart contract. [example](./examples/gpt3/wtf.md) 
+- GPT3 integration in a smart contract. [example](./examples/gpt3/wtf.md)
 
 
 ## License
