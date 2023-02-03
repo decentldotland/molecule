@@ -22,6 +22,7 @@ import { isMassaSigner } from "./molecules/massa/atoms/verifySigner.js";
 import { isFuelSigner } from "./molecules/fuel/atoms/verifySigner.js";
 import { isTezSigner } from "./molecules/tez/atoms/verifySigner.js";
 import { isAptosSigner } from "./molecules/aptos/atoms/verifySigner.js";
+import { isNostrSigner } from "./molecules/nostr/atoms/verifySigner.js";
 import { readNearOracleState } from "./molecules/near/atoms/read-contract.js";
 import { getEverTxObject } from "./molecules/everpay/atoms/tx.js";
 import { getTokenPrice } from "./molecules/redstone/atoms/oracle.js";
@@ -241,6 +242,21 @@ app.get("/aptos-auth/:pubkey/:message/:signature", async (req, res) => {
     assert.equal(checkSubdomain(req, "aptos"), true);
     const { pubkey, message, signature } = req.params;
     const response = await isAptosSigner(message, pubkey, signature);
+    res.send(response);
+    return;
+  } catch (error) {
+    res.send({ result: false, address: null });
+    return;
+  }
+});
+
+app.get("/nostr-auth/:encoded_event/:pubkey/:expected_message", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "nostr"), true);
+    const { encoded_event, pubkey, expected_message } = req.params;
+    const response = await isNostrSigner(encoded_event, pubkey, expected_message);
     res.send(response);
     return;
   } catch (error) {
