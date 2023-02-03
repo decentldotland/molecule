@@ -12,6 +12,7 @@ export const MOLECULES = [
   "tez",
   "exm",
   "near",
+  "nostr",
   "aptos",
   "massa",
   "ever",
