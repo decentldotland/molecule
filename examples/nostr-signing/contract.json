@@ -1,0 +1,8 @@
+{
+  "posts": [],
+  "signatures": [],
+  "verification_message": "hello world",
+  "nostr_molecule_endpoint": "http://nostr.molecule.sh",
+  "exm_molecule_endpoint": "http://exm.molecule.sh"
+}
+
