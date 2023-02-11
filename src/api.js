@@ -53,6 +53,20 @@ app.get("/tx-gql/:txid", async (req, res) => {
   }
 });
 
+app.get("/ar/tx-gql/:txid", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    const response = await getArTxObject(req.params?.txid);
+    res.send(response);
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send({});
+    return;
+  }
+});
+
 app.get("/ota/:pubkey", async (req, res) => {
   try {
     res.setHeader("Content-Type", "application/json");
@@ -280,10 +294,38 @@ app.get("/everpay/tx/:txid", async (req, res) => {
   }
 });
 
-app.get("/redstone/price/:ticker", async (req, res) => {
+app.get("/ever/everpay/tx/:txid", async (req, res) => {
   try {
     res.setHeader("Content-Type", "application/json");
 
+    const { txid } = req.params;
+    const response = await getEverTxObject(txid);
+    res.send(response);
+    return;
+  } catch (error) {
+    res.send({ molecule_error: "invalid_txid" });
+    return;
+  }
+});
+
+app.get("/redstone-oracle/price/:ticker", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    const { ticker } = req.params;
+    const response = await getTokenPrice(ticker);
+    res.send(response);
+    return;
+  } catch (error) {
+    console.log(error)
+    res.send({ molecule_error: "redstone_error" });
+    return;
+  }
+});
+
+app.get("/redstone/price/:ticker", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
     assert.equal(checkSubdomain(req, "redstone"), true);
     const { ticker } = req.params;
     const response = await getTokenPrice(ticker);
