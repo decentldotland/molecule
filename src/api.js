@@ -81,6 +81,20 @@ app.get("/ota/:pubkey", async (req, res) => {
   }
 });
 
+app.get("/ar-ota/:pubkey", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    const address = await ownerToAddress(req.params?.pubkey);
+    res.send({ address });
+    return;
+  } catch (error) {
+    res.send({ address: null });
+    return;
+  }
+});
+
+
 app.get("/signer/:address/:message/:signature", async (req, res) => {
   try {
     res.setHeader("Content-Type", "application/json");
