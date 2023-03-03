@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import assert from "node:assert";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import base64url from "base64url";
 
 import { checkSubdomain } from "./utils/resolving.js";
 import { getArTxObject } from "./molecules/ar/atoms/tx-gql.js";
@@ -27,16 +30,22 @@ import { readNearOracleState } from "./molecules/near/atoms/read-contract.js";
 import { getEverTxObject } from "./molecules/everpay/atoms/tx.js";
 import { getTokenPrice } from "./molecules/redstone/atoms/oracle.js";
 import { postExmData } from "./molecules/exm/atoms/bundlr.js";
-import base64url from "base64url";
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(
   cors({
     origin: "*",
   })
 );
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname + "/views/homepage.html"));
+});
 
 app.get("/tx-gql/:txid", async (req, res) => {
   try {
