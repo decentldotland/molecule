@@ -30,6 +30,7 @@ import { readNearOracleState } from "./molecules/near/atoms/read-contract.js";
 import { getEverTxObject } from "./molecules/everpay/atoms/tx.js";
 import { getTokenPrice } from "./molecules/redstone/atoms/oracle.js";
 import { postExmData } from "./molecules/exm/atoms/bundlr.js";
+import { getTxsMimeType } from "./molecules/ar/atoms/mime.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -67,6 +68,20 @@ app.get("/ar/tx-gql/:txid", async (req, res) => {
     res.setHeader("Content-Type", "application/json");
 
     const response = await getArTxObject(req.params?.txid);
+    res.send(response);
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send({});
+    return;
+  }
+});
+
+app.get("/ar/mime/:txids", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    const response = await getTxsMimeType(req.params?.txids);
     res.send(response);
     return;
   } catch (error) {

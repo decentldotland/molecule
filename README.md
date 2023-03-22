@@ -81,7 +81,7 @@ molecules/
 ### Endpoints
 | molecule  | endpoint | atoms | stability |
 | :-------------: |:-------------:| :-------------:| :-------------:|
-| Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` | 🟩 |
+| Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` `mime` | 🟩 |
 | EVM (`evm`)      | `evm.molecule.sh`     | `signer` | 🟩 |
 | Solana (`sol`) | `sol.molecule.sh` | `auth` | 🟩 |
 | Zilliqa (`zil`) | `zil.molecule.sh` | `zil-auth` | 🟩 |
