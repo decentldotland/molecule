@@ -1,4 +1,4 @@
-import { getArTxObject } from "./tx-gql.js";
+import axios from "axios";
 
 export async function getTxsMimeType(txs) {
   try {
@@ -7,14 +7,25 @@ export async function getTxsMimeType(txs) {
     for (const tx of txsArray) {
       res[tx] = {};
 
-      const metadata = await getArTxObject(tx);
+      const metadata = await getArseedTxMeta(tx);
       res[tx].mime = metadata?.tags.find(
         (tag) => tag.name.toLowerCase() === "content-type"
       )?.value;
-      res[tx]["size"] = metadata?.data?.size;
     }
 
     return res;
+  } catch (error) {
+    console.log(error);
+    return {};
+  }
+}
+
+async function getArseedTxMeta(txid) {
+  try {
+    const metadata = (
+      await axios.get(`https://arseed.web3infra.dev/bundle/tx/${txid}`)
+    )?.data;
+    return metadata;
   } catch (error) {
     console.log(error);
     return {};
