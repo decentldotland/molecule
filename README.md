@@ -88,7 +88,7 @@ molecules/
 | Stacks (`stx`) | `stx.molecule.sh` | `stx-auth` | 🟩 | 
 | Substrate.io (`substrate`) | `substrate.molecule.sh` | `substrate-auth` | 🟩 |
 | TRON (`trx`) | `trx.molecule.sh` | `trx-auth` | 🟩 |
-| Internet Protocol (`ICP`) | `icp.molecule.sh` | `icp-auth` |  🟩 |
+| Internet Computer Protocol (`ICP`) | `icp.molecule.sh` | `icp-auth` |  🟩 |
 | TON (`ton`) | `ton.molecule.sh` | `ton-auth` |  🟩 |
 | Massa (`massa`) | `massa.molecule.sh` | `massa-auth` |  🟩 |
 | Fuel Network (`fuel`) | `fuel.molecule.sh` | `fuel-auth` |  🟩 |
