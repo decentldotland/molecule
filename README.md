@@ -110,7 +110,7 @@ molecules/
 `{molecule-name}.molecule.sh/{atom-name}/{argument1}/{argument2}`
 
 ## Examples
-The following EXM contracts integrate [molecule.sh](http://molecule.sh) atoms to achieve certain functionalities:
+The following MEM contracts integrate [molecule.sh](http://molecule.sh) atoms to achieve certain functionalities:
 
 - MEM with EVM : allows MEM contracts to be fully compatible with `action.caller` as EVM EOA. [example](./examples/evm-signing/wtf.md)
 
