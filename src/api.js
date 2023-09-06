@@ -31,6 +31,7 @@ import { getEverTxObject } from "./molecules/everpay/atoms/tx.js";
 import { getTokenPrice } from "./molecules/redstone/atoms/oracle.js";
 import { postExmData } from "./molecules/exm/atoms/bundlr.js";
 import { getTxsMimeType } from "./molecules/ar/atoms/mime.js";
+import { isArSigner } from "./molecules/ar/atoms/verifySigner.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -118,6 +119,20 @@ app.get("/ar-ota/:pubkey", async (req, res) => {
   }
 });
 
+
+app.get("/ar-auth/:pubkey/:message/:signature", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+    assert.equal(checkSubdomain(req, "ar"), true);
+    const { pubkey, message, signature } = req.params;
+    const response = await isArSigner(pubkey, message, signature);
+    res.send({ result: response });
+    return;
+  } catch (error) {
+    res.send({ result: false });
+    return;
+  }
+});
 
 app.get("/signer/:address/:message/:signature", async (req, res) => {
   try {

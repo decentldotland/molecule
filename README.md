@@ -81,7 +81,7 @@ molecules/
 ### Endpoints
 | molecule  | endpoint | atoms | stability |
 | :-------------: |:-------------:| :-------------:| :-------------:|
-| Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` `mime` | 🟩 |
+| Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` `mime` `ar-auth` | 🟩 |
 | EVM (`evm`)      | `evm.molecule.sh`     | `signer` | 🟩 |
 | Solana (`sol`) | `sol.molecule.sh` | `auth` | 🟩 |
 | Zilliqa (`zil`) | `zil.molecule.sh` | `zil-auth` | 🟩 |
@@ -95,7 +95,7 @@ molecules/
 | Tezos (`tez` | `tez.molecule.sh` | `tez-auth` | 🟩 |
 | Aptos (`aptos` | `aptos.molecule.sh` | `aptos-auth` | 🟩 |
 | Nostr (`nostr` | `nostr.molecule.sh` | `nostr-auth` | 🟩 |
-| EXM (`exm` | `exm.molecule.sh` | `exm-bundlr` | 🟩 |
+| EXM (`exm` | `exm.molecule.sh` | `exm-bundlr` | 🟥 |
 | NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
 | Everpay (`ever`) | `ever.molecule.sh` | `tx` | 🟩 |
 | Redstone (`redstone`) | `redstone.molecule.sh` | `price` | 🟩 |
