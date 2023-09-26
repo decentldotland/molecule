@@ -9,6 +9,8 @@ import { checkSubdomain } from "./utils/resolving.js";
 import { getArTxObject } from "./molecules/ar/atoms/tx-gql.js";
 import { ownerToAddress } from "./molecules/ar/atoms/ota.js";
 import { isEvmSigner } from "./molecules/evm/atoms/verifySigner.js";
+import { encryptEVMMessage } from "./molecules/evm/atoms/encrypt.js";
+import { decryptEVMMessage } from "./molecules/evm/atoms/decrypt.js";
 import { isSolSigner } from "./molecules/sol/atoms/verifySigner.js";
 import { random } from "./molecules/rand/atoms/int.js";
 import { getArkState } from "./molecules/ark/atoms/state.js";
@@ -141,6 +143,36 @@ app.get("/signer/:address/:message/:signature", async (req, res) => {
     assert.equal(checkSubdomain(req, "evm"), true);
     const { address, message, signature } = req.params;
     const response = await isEvmSigner(address, message, signature);
+    res.send({ result: response });
+    return;
+  } catch (error) {
+    res.send({ result: false });
+    return;
+  }
+});
+
+app.get("/encrypt/:message", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "evm"), true);
+    const { message } = req.params;
+    const response = await encryptEVMMessage(message);
+    res.send({ result: response });
+    return;
+  } catch (error) {
+    res.send({ result: false });
+    return;
+  }
+});
+
+app.get("/decrypt/:hash", async (req, res) => {
+  try {
+    res.setHeader("Content-Type", "application/json");
+
+    assert.equal(checkSubdomain(req, "evm"), true);
+    const { hash } = req.params;
+    const response = await decryptEVMMessage(hash);
     res.send({ result: response });
     return;
   } catch (error) {
