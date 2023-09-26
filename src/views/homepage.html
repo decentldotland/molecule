@@ -26,7 +26,7 @@
     <meta property="og:title" content="molecule.sh" />
     <meta
       property="og:description"
-      content="composable building blocks for EXM smart contracts"
+      content="composable building blocks for MEM smart contracts"
     />
     <meta
       property="og:image"
@@ -87,48 +87,53 @@
       <pre>
 molecules/
 ├── ar/
-│   └── tx-gql ~> atom
+│   └── mime
+│   └── ota
+│   └── tx-gql
+│   └── ar-auth
 └── evm/
-├── └── signer
-└── sol/ ~> molecule
-├── └── auth
+│   └── signer
+│   └── decrypt
+│   └── encrypt
+└── sol/
+│   └── auth
 └── zil/
-├── └── zil-auth
+│   └── zil-auth
 ├── stx/
 │   └── stx-auth
 └── substrate/
-├── └── substrate-auth
+│   └── substrate-auth
 └── trx/
-├── └── trx-auth
+│   └── trx-auth
 └── icp/
-├── └── icp-auth
+│   └── icp-auth
 └── ton/
-├── └── ton-auth/
+│   └── ton-auth
 └── massa/
-├── └── massa-auth
+│   └── massa-auth
 └── fuel/
-├── └── fuel-auth
+│   └── fuel-auth
 └── tez/
-├── └── tez-auth
+│   └── tez-auth
 └── aptos/
-└── └── aptos-auth/
+│   └── aptos-auth
 └── nostr/
-    └── nostr-auth
+│   └── nostr-auth
 └── exm/
-└── └── exm-bundlr
+│   └── exm-bundlr
 └── near/
-└── └── n-view-state/
+│   └── n-view-state
 └── ever/
-├── └── tx
+│   └── tx
 └── redstone/
-└── └── price
+│   └── price
 └── ark/
-├── ├── resolve
-├── └── state
+│   ├── resolve
+│   └── state
 │   └── soark/domain
 └── ai/
-└── └── chatgpt
-└── └── gpt3</pre
+│   └── chatgpt
+│   └── gpt3</pre
       >
       <h3 class="subtitle">abstract</h3>
       <p>

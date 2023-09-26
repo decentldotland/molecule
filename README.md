@@ -82,7 +82,7 @@ molecules/
 | molecule  | endpoint | atoms | stability |
 | :-------------: |:-------------:| :-------------:| :-------------:|
 | Arweave (`ar`)   | `ar.molecule.sh`    | `tx-gql` `ota` `mime` `ar-auth` | 🟩 |
-| EVM (`evm`)      | `evm.molecule.sh`     | `signer` | 🟩 |
+| EVM (`evm`)      | `evm.molecule.sh`     | `signer` `encrypt` `decrypt` | 🟩 |
 | Solana (`sol`) | `sol.molecule.sh` | `auth` | 🟩 |
 | Zilliqa (`zil`) | `zil.molecule.sh` | `zil-auth` | 🟩 |
 | Stacks (`stx`) | `stx.molecule.sh` | `stx-auth` | 🟩 | 
@@ -99,7 +99,7 @@ molecules/
 | NEAR (`near`) | `near.molecule.sh` | `n-view-state` | 🟩 |
 | Everpay (`ever`) | `ever.molecule.sh` | `tx` | 🟩 |
 | Redstone (`redstone`) | `redstone.molecule.sh` | `price` | 🟩 |
-| Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟩/🟨 
+| Ark Protocol (`ark`) | `ark.molecule.sh` | `state` `resolve` `soark/domain` | 🟥
 | Randomization (`rand`) | `rand.molecule.sh` | `generate` | 🟩/🟨 |
 | AI (`ai`) | `ai.molecule.sh` | `gpt3` | 🟩/🟨 |
 
