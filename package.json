@@ -1,8 +1,8 @@
 {
   "name": "molecule",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "type": "module",
-  "description": "reusable EXM components and helper functions for a faster development",
+  "description": "reusable MEM components and helper functions for a faster development",
   "main": "./src/api.js",
   "scripts": {
     "molecules": "node ./src/api.js"
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/decentldotland/molecule.git"
   },
   "keywords": [
-    "EXM",
+    "MEM",
     "smart-contract",
     "decentland"
   ],
@@ -36,6 +36,7 @@
     "bs58": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "eth-crypto": "^2.6.0",
     "ethers": "^5.7.2",
     "express": "^4.18.2",
     "js-sha256": "^0.9.0",
