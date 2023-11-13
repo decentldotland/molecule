@@ -19,7 +19,7 @@ export async function handle(state, action) {
       "error signed message used"
     );
 
-    const message = btoa(verification_message);
+    const message = btoa(state.verification_message);
     await _moleculeSignatureVerification(caller, message, signature);
     state.names[caller] = name.trim();
     signatures.push(signature);
